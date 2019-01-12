@@ -1,1 +1,1 @@
-# MapboxGL-JS-Wonders-of-the-World
+# MapboxGL JS Wonders of the World
