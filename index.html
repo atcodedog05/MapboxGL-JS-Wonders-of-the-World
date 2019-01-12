@@ -2,13 +2,33 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Add an icon to the map</title>
+    <title>Wonders of the World</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+      }
+      #instrutions {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 25%;
+        z-index: 2;
+      }
     </style>
 </head>
 <body>
@@ -20,15 +40,19 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXRjb2RlZG9nMDUiLCJhIjoiY2pxcnU5cjVjMG9tNjQzb
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-10, 20],
+    zoom: 2.5
 });
 
 map.on('load', function() {
-    map.loadImage('https://static.vecteezy.com/system/resources/previews/000/099/368/non_2x/7-wonders-of-the-world-free-vector.png', function(error, image) {
+
+    
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Big_Ben.png', function(error, image) {
         if (error) throw error;
-        map.addImage('cat', image);
+        map.addImage('Big_Ben', image);
         map.addLayer({
-            "id": "points",
+            "id": "Big_Ben",
             "type": "symbol",
             "source": {
                 "type": "geojson",
@@ -38,20 +62,261 @@ map.on('load', function() {
                         "type": "Feature",
                         "geometry": {
                             "type": "Point",
-                            "coordinates": [0, 0]
+                            "coordinates": [-0.1268141, 51.5007292]
                         }
                     }]
                 }
             },
             "layout": {
-                "icon-image": "cat",
-                "icon-size": 0.25
+                "icon-image": "Big_Ben",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
             }
         });
     });
+    
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Colosseum.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Colosseum', image);
+        map.addLayer({
+            "id": "Colosseum",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [12.4900422, 41.8902102]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Colosseum",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Effiel_Tower.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Effiel_Tower', image);
+        map.addLayer({
+            "id": "Effiel_Tower",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [2.2922926, 48.8583701]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Effiel_Tower",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Leaning_Tower.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Leaning_Tower', image);
+        map.addLayer({
+            "id": "Leaning_Tower",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [10.3944083, 43.7229559]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Leaning_Tower",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Pyramid.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Pyramid', image);
+        map.addLayer({
+            "id": "Pyramid",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [31.13116, 29.97827]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Pyramid",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Rio.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Rio', image);
+        map.addLayer({
+            "id": "Rio",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-43.5860654, -22.9137531]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Rio",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
+    map.loadImage('https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Taj_Mahal.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('Taj_Mahal', image);
+        map.addLayer({
+            "id": "Taj_Mahal",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [78.0399665, 27.1750199]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "Taj_Mahal",
+                "icon-size": 0.25,
+                'icon-allow-overlap': true
+            }
+        });
+    });
+
+
+
+
 });
 
+
 </script>
+
+<div id="instrutions">
+  <div class="w3-card-4 w3-white">
+  <header class="w3-container w3-blue">
+  <h3>The Seven Wonders</h3>
+</header>
+
+<div class="w3-container">
+  <span class="w3-text-grey">
+  <table>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Big_Ben.png" width="100"></td>
+          <td> Big Ben of London</td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Colosseum.png" width="100"></td>
+          <td> Colosseum of Rome </td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Effiel_Tower.png" width="100"></td>
+          <td> Effiel Tower of Paris</td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Leaning_Tower.png" width="100"></td>
+          <td> Leaning Tower of Pisa </td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Pyramid.png" width="100"></td>
+          <td> Pyramids of Egypt </td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Rio.png" width="100"></td>
+          <td> Rio of Brazil </td>
+      </tr>
+      <tr>
+          <td><img src="https://raw.githubusercontent.com/atcodedog05/MapboxGL-JS-Wonders-of-the-World/master/Wonders/Taj_Mahal.png" width="100"></td>
+          <td> Taj Mahal of India </td>
+      </tr>
+  </table>
+  </span>
+</div>
+
+<footer class="w3-container w3-blue">
+  <h5>
+    Designed Using MapboxGL JS
+    <br><br>
+    Find more projects by me on: <br>
+    <a href="https://atcodedog05.github.io/"
+    target="_blank">https://atcodedog05.github.io</a><br>
+    <a href="https://github.com/atcodedog05"
+    target="_blank">https://github.com/atcodedog05</a>
+  </h5>
+</footer>
+</div>
+</div>
 
 </body>
 </html>
